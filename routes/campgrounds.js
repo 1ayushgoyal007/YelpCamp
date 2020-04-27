@@ -70,7 +70,6 @@ router.get("/campgrounds/:id/edit",checkOwnerShip,function(req,res){
             if(err){
                 res.redirect("/campgrounds");
             }else{
-                console.log("currentUser-----------------------------------------------",currentUser);
                 res.render("campgrounds/edit",{campground:foundCampground});
             }
         })
