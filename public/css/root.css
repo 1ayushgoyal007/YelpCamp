@@ -1,0 +1,83 @@
+.margin-bottom{
+    margin-bottom: 20px;
+}
+.lead{
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+.img-responsive{
+    width: 100% ;
+}
+.thumbnail{
+    border: 1px solid rgba(128,128,128,0.5);
+    border-radius: 10px;
+    margin: 10px 0;
+}
+.caption-full{
+    padding: 20px;
+}
+.caption-full > div{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+.author{
+    color: #0099ff;
+    font-size: 1.2em;
+}
+.pull-right{
+    padding-top: 8px;
+    font-weight: 600;
+}
+.commenting{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.well{
+    background-color: rgba(128,128,128,0.1);
+    border: 1px solid rgba(128,128,128,0.5);
+    border-radius: 5px;
+    padding: 20px;
+}
+.delete-form{
+    display: inline;
+}
+.fa-free-code-camp{
+padding-right:10px;
+
+}
+.index-header{
+    display: flex;
+}
+.nav-link{
+    font-weight: 600;
+}
+h3{
+    text-align: center;
+    padding-bottom:10px ;
+}
+p{
+    font-weight: 500;
+}
+.error{
+    background-color: #f308080c;
+    color: #f30808;
+    margin: 0 20% 20px 20%;
+    font-weight: bolder;
+    padding: 10px;
+    font-size: 1.2em;
+    padding-left: 30px;
+}
+
+.success{
+    background-color: #08f34f0e;
+    color: #009c2f;
+    margin: 0 10% 20px 10%;
+    font-weight: bolder;
+    padding: 10px;
+    font-size: 1.25em;
+    padding-left: 30px;
+}

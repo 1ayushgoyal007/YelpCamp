@@ -1,0 +1,114 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View One Campground</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/root.css">
+</head>
+<body>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light margin-bottom">
+        <a class="navbar-brand" href="/">YelpCamp</a>
+        <button onclick="show()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <% if(!currentUser){  %>
+               <li class="nav-item ">
+                 <a class="nav-link" href="/login">Login<span class="sr-only"></span></a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="/register">SignUp</a>
+               </li>
+           <% }else{  %>
+               <li class="nav-item">
+                 <a class="nav-link" href="/campgrounds">Signed in as <strong><%= currentUser.username %></strong></a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="/logout">Logout</a>
+               </li>
+            <% } %>
+           </ul>
+        </div>
+      </nav>
+
+
+      
+      <% if(error && error.length > 0){  %>
+        <div class="error" >
+          <%= error %>
+        </div>
+      <% } %>
+      <% if(success && success.length > 0){  %>
+        <div class="success" >
+          <%= success %>
+        </div>
+      <% } %>
+
+
+      <div class="container" >
+        <div class="row" >
+          <div class="col-md-3" >
+            <p class="lead" >YelpCamp</p>
+            <div class="list-group" >
+              <li class="list-group-item active " > Info 1</li>
+              <li class="list-group-item" > Info 2</li>
+              <li class="list-group-item" > Info 3 </li>
+            </div>
+          </div>
+          <div class="col-md-9" >
+            <div class="thumbnail" >
+              <img class="img-responsive" src="<%= campground.image %>" alt="image">
+              <div class="caption-full" >
+                <div>
+                <h4 class="pull-left" >$9.00 /Night</h4>
+                <h4><a href="#"><%= campground.name %></a></h4>
+                </div>
+                <p><%= campground.description %></p>
+                <em><p>Submitted by <strong><%= campground.author.username %></strong></p></em>
+                <% if( currentUser && campground.author.id.equals(currentUser._id)){ %>
+                    <a class="btn btn-warning" href="/campgrounds/<%= campground.id %>/edit">Edit </a>
+                    <form class="delete-form" action="/campgrounds/<%= campground.id %>?_method=DELETE" method="POST">
+                      <button class="btn btn-danger" >Delete</button>
+                    </form>
+              <% } %>
+              </div>
+            </div>
+            <div class="well" >
+              <div class="text-right" >
+                  <a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Leave a review</a>
+              </div>
+              <% for( var i=0;i<campground.comments.length;i++ ){  %>
+                <div class="row" >
+                  <div class="col-md-12 commenting" >
+                    <strong class="author" ><%= campground.comments[i].author.username %></strong>
+                    <span class="pull-right" >10 days ago</span>
+                  </div>
+                </div>
+                <p> <%= campground.comments[i].text %> </p>
+                <% if( currentUser && campground.comments[i].author.id.equals(currentUser._id)){ %>
+                <a class="btn  btn-warning" href="/campgrounds/<%= campground._id%>/comments/<%= campground.comments[i]._id %>/edit">Edit</a>
+                <form class="delete-form" action="/campgrounds/<%= campground._id %>/comments/<%= campground.comments[i]._id %>?_method=DELETE" method="POST">
+                  <button class="btn btn-danger" >Delete</button>
+                </form>
+                <% } %>
+                <% } %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    
+
+    
+
+    <script src="/script/script.js"></script>
+
+</body>
+</html>

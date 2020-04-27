@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/landing.css">
+
+</head>
+<body>
+
+    
+
+
+      <% if(error && error.length > 0){  %>
+        <div class="error" >
+          <%= error %>
+        </div>
+      <% } %>
+      <% if(success && success.length > 0){  %>
+        <div class="success" >
+          <%= success %>
+        </div>
+      <% } %>
+
+
+
+      <div class="landing-div" >
+        <h1>Welcome to YelpCamp!</h1>
+        <button onclick="location.href = '/campgrounds';" class="landing-btn" >Let's Get Started!</button>
+        
+      </div>
+
+      <ul class="slideshow" >
+        <li id="first" ></li>
+        <li id="second"></li>
+        <li id="third"></li>
+        <li id="fourth"></li>
+        <li id="fifth"></li>
+      </ul>
+
+    
+
+
+<script src="/script/script.js"></script>
+
+
+</body>
+</html>

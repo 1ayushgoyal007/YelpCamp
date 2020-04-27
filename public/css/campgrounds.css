@@ -1,0 +1,15 @@
+.thumbnail{
+    width: 100%;
+    border: 1px solid rgba(128,128,128,0.7);
+    padding: 10px;
+    border-radius:5px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.each-image{
+    width: 100%;
+}
+.navbar00 {
+    display: flex;
+    justify-content: space-between;
+}
