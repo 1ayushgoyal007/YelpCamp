@@ -62,22 +62,38 @@ h3{
 p{
     font-weight: 500;
 }
-.error{
-    background-color: #f308080c;
-    color: #f30808;
-    margin: 0 20% 20px 20%;
-    font-weight: bolder;
+
+.contact-textarea{
+    width: 100%;
     padding: 10px;
+    height: 150px;
+}
+.error{
+    color: #f30808;
+    font-weight: bolder;
+    width:300px;
+    height: 50px;
     font-size: 1.2em;
-    padding-left: 30px;
+    padding: 10px;
+    box-shadow: 2px 2px 8px 2px rgba(128,128,128,0.5);
+    border-left: 5px solid red;
+    position: fixed;
+    right: 20px;
+    top:70px;
 }
 
 .success{
-    background-color: #08f34f0e;
     color: #009c2f;
-    margin: 0 10% 20px 10%;
     font-weight: bolder;
+    width:300px;
+    height: 50px;
     padding: 10px;
-    font-size: 1.25em;
-    padding-left: 30px;
+    font-size: 1.2em;
+    box-shadow: 2px 2px 8px 2px rgba(128,128,128,0.5);
+    border-left: 5px solid #009c2f;
+    position: fixed;
+    right: 20px;
+    top:70px;
+    background-color: white;
 }
+

@@ -1,0 +1,93 @@
+
+
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>View One Campground</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/root.css">
+    </head>
+    <body>
+    
+        <nav class="navbar navbar-expand-lg navbar-light bg-light margin-bottom">
+            <a class="navbar-brand" href="/">YelpCamp</a>
+            <button onclick="show()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <% if(!currentUser){  %>
+                       <li class="nav-item ">
+                         <a class="nav-link" href="/login">Login<span class="sr-only"></span></a>
+                       </li>
+                       <li class="nav-item">
+                         <a class="nav-link" href="/register">SignUp</a>
+                       </li>
+                   <% }else{  %>
+                       <li class="nav-item">
+                         <a class="nav-link" href="/campgrounds">Signed in as <strong><%= currentUser.username %></strong></a>
+                       </li>
+                       <li class="nav-item">
+                         <a class="nav-link" href="/logout">Logout</a>
+                       </li>
+                    <% } %>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                   </ul>
+            </div>
+          </nav>
+    
+          <% if(error && error.length > 0){  %>
+            <div class="error" >
+              <%= error %>
+            </div>
+          <% } %>
+          <% if(success && success.length > 0){  %>
+            <div class="success" >
+              <%= success %>
+            </div>
+          <% } %>
+    
+
+    
+    
+        <div class="container" >
+          <div class="row" >
+              <div style="width: 50%; margin: 0 auto;" >
+                <h1>Contact Us</h1>
+              <form action="/contact"  method="POST">
+                  <div class="form-group"style="margin-top:20px;" >
+                    <input class="form-control" type="text" name="subject" placeholder="Email Subject" >
+                  </div>
+                  <div class="form-group" >
+                    <input class="form-control" type="email" name="email" placeholder="Enter Email" >
+                  </div>
+                  <div class="form-group" >
+                    <textarea class="contact-textarea" name="message"   rows="10" placeholder="Message" ></textarea>
+                </div>
+                  <div class="form-group" >
+                      <button class="btn btn-primary btn-block" >Contact Us</button>                    
+                  </div>
+              </form>
+
+              </div>
+          </div>
+      </div>
+    
+    
+    
+    <script src="/script/script.js"></script>
+    </body>
+    </html>
+
+
+
+
+
+
+
+
+

@@ -5,6 +5,7 @@ var localStrategy = require("passport-local");
 var app = express();
 var flash = require("connect-flash");
 
+
 app.set("view engine","ejs"); 
 app.use(express.static(__dirname+"/public"));
 app.use(methodOverride("_method"));
@@ -24,6 +25,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 var commentRoutes = require("./routes/comments");
 var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes = require("./routes/auth");
+
+
 
 
 
@@ -68,6 +71,5 @@ app.use(commentRoutes);
 //Port--------------------------------->
 app.set("port", process.env.PORT || 4000);
 app.listen(app.get("port"), function(req,res){
-
       console.log("Application running in port: " + app.get("port"));
 });

@@ -112,7 +112,7 @@ function isLoggedIn(req,res,next){
         return next();
     }
     else{
-        req.flash("error","You Need to be logged in to do that!!");
+        req.flash("error","Login First!!");
         res.redirect("/login");
     }
 }
@@ -135,7 +135,7 @@ function checkOwnerShip(req,res,next){
             }
         })
     }else{
-        req.flash("error","You need to be logged in to do that!!");
+        req.flash("error","Login First!!");
         res.redirect("back");
     }
 }
